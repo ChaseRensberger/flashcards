@@ -1,7 +1,19 @@
+"use client";
+import { useState } from "react";
+import { CardSides } from "./lib/utils";
 export default function Home() {
+  const [cardSide, setCardSide] = useState(CardSides.Front);
+
+  const toggleCardSide = () => {
+    if (cardSide) {
+      setCardSide(CardSides.Front);
+    } else if (!cardSide) {
+      setCardSide(CardSides.Back);
+    }
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Flashcard</h1>
+    <main className="bg-black text-white min-h-screen">
+      <h1>Test</h1>
     </main>
   );
 }
