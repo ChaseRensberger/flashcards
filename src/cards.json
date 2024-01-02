@@ -1,1 +1,4 @@
-[{ "front": "question", "back": "answer" }]
+[
+  { "question": "question", "answer": "answer", "season": 1, "match": 1 },
+  { "question": "question2", "answer": "answer", "season": 2, "match": 1 }
+]
