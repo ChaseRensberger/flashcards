@@ -13,7 +13,11 @@ export default function Home() {
   };
   return (
     <main className="bg-black text-white min-h-screen">
-      <h1>Test</h1>
+      {cardSide === CardSides.Front ? <dd>Question</dd> : <dt>Answer</dt>}
+      <button className="p-2 rounded-md bg-blue-500" onClick={toggleCardSide}>
+        +
+      </button>
+      <button className="p-2 rounded-md bg-blue-500">Next</button>
     </main>
   );
 }
