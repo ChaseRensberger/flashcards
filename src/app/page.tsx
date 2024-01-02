@@ -4,7 +4,9 @@ import { CardSides } from "@/lib/utils";
 import Cards from "@/cards.json";
 export default function Home() {
   const [cardSide, setCardSide] = useState(CardSides.Front);
-  const [currentCard, setCurrentCard] = useState<number>(0);
+  const [currentCard, setCurrentCard] = useState<number>(
+    Math.floor(Math.random() * Cards.length)
+  );
 
   const toggleCardSide = () => {
     if (cardSide) {
