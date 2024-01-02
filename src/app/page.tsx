@@ -18,18 +18,28 @@ export default function Home() {
     setCurrentCard(Math.floor(Math.random() * Cards.length));
   };
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="bg-black text-white min-h-screen flex flex-col items-center justify-between p-64">
       {cardSide === CardSides.Front ? (
-        <dd>{Cards[currentCard].question}</dd>
+        <dd className="text-xl">{Cards[currentCard].question}</dd>
       ) : (
-        <dt>{Cards[currentCard].answer}</dt>
+        <dt className="text-xl">{Cards[currentCard].answer}</dt>
       )}
-      <button className="p-2 rounded-md bg-blue-500" onClick={toggleCardSide}>
-        +
-      </button>
-      <button className="p-2 rounded-md bg-blue-500" onClick={nextCard}>
-        Next
-      </button>
+      {cardSide === CardSides.Back ? (
+        <p className="text-yellow-200 text-sm">
+          Season {Cards[currentCard].season}, Match Day{" "}
+          {Cards[currentCard].match}
+        </p>
+      ) : (
+        <></>
+      )}
+      <div className="flex flex-row justify-between w-48">
+        <button className="p-2 rounded-md bg-blue-500" onClick={toggleCardSide}>
+          Turn
+        </button>
+        <button className="p-2 rounded-md bg-blue-500" onClick={nextCard}>
+          Next
+        </button>
+      </div>
     </main>
   );
 }
