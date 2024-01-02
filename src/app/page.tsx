@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { CardSides } from "./lib/utils";
+import { CardSides } from "@/lib/utils";
 import Cards from "@/cards.json";
 export default function Home() {
   const [cardSide, setCardSide] = useState(CardSides.Front);
@@ -15,6 +15,7 @@ export default function Home() {
   };
 
   const nextCard = () => {
+    setCardSide(CardSides.Front);
     setCurrentCard(Math.floor(Math.random() * Cards.length));
   };
   return (
